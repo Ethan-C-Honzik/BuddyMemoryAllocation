@@ -45,7 +45,7 @@ public class Node {
             if (left == null && right == null) split();
             assert left != null && right != null;
             int addr = left.allocate(requestedSize);
-            if(addr < -1) addr = right.allocate(requestedSize);
+            if(addr < 0) addr = right.allocate(requestedSize);
             return addr;
         }
     }
