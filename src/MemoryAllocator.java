@@ -1,28 +1,31 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MemoryAllocator {
+    public final int[] memory;
     private final Node[] roots;
     private final int maxSize;
     private final int buffCount;
     //the flag that is set when there is two or less 512 buffers remaining
     private boolean lowMemory = false;
 
-    public String getStatus(){
-        if(lowMemory){
-            return "Tight";
-        }else{
-            return "OK";
-        }
-    }
-
     public MemoryAllocator(int maxBuffSize, int buffCount) {
+        memory = new int[maxBuffSize * buffCount];
         maxSize = maxBuffSize;
         this.buffCount = buffCount;
         roots = new Node[buffCount];
         for (int i = 0; i < buffCount; i++) {
             roots[i] = new Node(i * maxBuffSize, maxBuffSize);
+        }
+    }
+
+    public String getStatus(){
+        if(lowMemory){
+            return "Tight";
+        }else{
+            return "OK";
         }
     }
 
@@ -65,7 +68,10 @@ public class MemoryAllocator {
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append("Free Buffer Count:\n");
-            for (Object entry : unallocatedBufferMap.entrySet().toArray()) {
+            //put into a tree map so that the results are in order
+            Object[] resultArr = new TreeMap<>(unallocatedBufferMap).entrySet().toArray();
+            for (int i = resultArr.length-1; i >=0; i--) {
+                Object entry = resultArr[i];
                 String entryStr = entry.toString();
                 sb.append(entryStr.split("=")[1]);
                 sb.append(" ");
