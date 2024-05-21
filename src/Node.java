@@ -37,16 +37,16 @@ public class Node {
 
         // if the requested is greater than a split but less than the current size allocate
         // additionally don't bother splitting if requested size is less than 8
-        if(requestedSize <= size && (requestedSize > size / 2 || (size/2) < 8)){
-            if(left != null && right != null) return -1;
+        if (requestedSize <= size && (requestedSize > size / 2 || (size / 2) < 8)) {
+            if (left != null && right != null) return -1;
             allocated = true;
             return address;
-        }else{
+        } else {
             //if the children are null split this node
             if (left == null && right == null) split();
             assert left != null && right != null;
             int addr = left.allocate(requestedSize);
-            if(addr < 0) addr = right.allocate(requestedSize);
+            if (addr < 0) addr = right.allocate(requestedSize);
             return addr;
         }
     }
@@ -55,27 +55,27 @@ public class Node {
      * This will split this node into two children
      */
     public void split() {
-        if(allocated){
+        if (allocated) {
             throw new RuntimeException("cannot split allocated node");
         }
         left = new Node(address, size / 2);
         right = new Node(address + size / 2, size / 2);
     }
 
-    public boolean deallocate(int address){
+    public boolean deallocate(int address) {
         //only leaf nodes can be allocated
-        if(left == null && right == null){
-            if(address == this.address){
+        if (left == null && right == null) {
+            if (address == this.address) {
                 assert allocated;
                 allocated = false;
                 return true;
-            }else{
+            } else {
                 return false;
             }
-        }else{
+        } else {
             assert left != null & right != null;
-            boolean success =  left.deallocate(address);
-            if(!success) success = right.deallocate(address);
+            boolean success = left.deallocate(address);
+            if (!success) success = right.deallocate(address);
             return success;
         }
     }
@@ -94,7 +94,7 @@ public class Node {
         //this checks if there are potential children to merge
         if (left != null) {
             //if both the left and right children are present and unallocated then we can merge them
-            if (!left.allocated && !right.allocated) {
+            if (!containsAllocatedChild(left) && !containsAllocatedChild(right)) {
                 left = null;
                 right = null;
             } else {
@@ -105,18 +105,24 @@ public class Node {
         }
     }
 
-    public void traverseForData(Map<Integer, Integer> allocatedMap, Map<Integer, Integer> unallocatedMap){
+    public void traverseForData(Map<Integer, Integer> allocatedMap, Map<Integer, Integer> unallocatedMap) {
         //if this is allocated log it in the map
-        if(allocated){
+        if (allocated) {
             allocatedMap.putIfAbsent(size, 0);
             allocatedMap.put(size, allocatedMap.get(size) + 1);
-        }else if(left == null && right == null){//if this is a leaf node log it in unallocatedMap
+        } else if (left == null && right == null) {//if this is a leaf node log it in unallocatedMap
             unallocatedMap.putIfAbsent(size, 0);
             unallocatedMap.put(size, unallocatedMap.get(size) + 1);
-        }else{
+        } else {
             assert left != null && right != null;
             left.traverseForData(allocatedMap, unallocatedMap);
             right.traverseForData(allocatedMap, unallocatedMap);
         }
+    }
+
+    private static boolean containsAllocatedChild(Node n) {
+        if (n.allocated) return true;
+        else if (n.left == null && n.right == null) return false;
+        else return containsAllocatedChild(n.left) || containsAllocatedChild(n.right);
     }
 }
