@@ -38,6 +38,7 @@ public class Node {
         // if the requested is greater than a split but less than the current size allocate
         // additionally don't bother splitting if requested size is less than 8
         if(requestedSize <= size && (requestedSize > size / 2 || (size/2) < 8)){
+            if(left != null && right != null) return -1;
             allocated = true;
             return address;
         }else{
@@ -63,10 +64,14 @@ public class Node {
 
     public boolean deallocate(int address){
         //only leaf nodes can be allocated
-        if(left == null && right == null && address == this.address){
-            assert allocated;
-            allocated = false;
-            return true;
+        if(left == null && right == null){
+            if(address == this.address){
+                assert allocated;
+                allocated = false;
+                return true;
+            }else{
+                return false;
+            }
         }else{
             assert left != null & right != null;
             boolean success =  left.deallocate(address);
