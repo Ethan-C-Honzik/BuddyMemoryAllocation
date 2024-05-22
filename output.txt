@@ -1,0 +1,1653 @@
+Ethan Honzik, 5.20.2024, Assignment 8
+
+Initializing buffers 
+ Expected values: 10 512 size buffers, Status Ok
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Requesting 700, expected values: 
+ Assigned address: -2
+
+Actual = assigned address: -2
+
+Requesting 6,  Expected values: 
+ 9 510 size buffers, 1 254 size buffer, 1 126 size buffer, 
+ 1 62 size buffer, 1 30 size buffer, 1 14 size buffer and 1 6 size buffer, Status OK
+
+Actual = assigned address: 0
+
+Free Buffer Count:
+9 512 Size Buffers
+1 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+1 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+OK
+
+returning 6,  Expected values: 
+ 10 510 size buffers, Status OK 
+
+Actual = assigned address: 0
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Requesting 10 510 buffers,  Expected values: 
+ 0 510 buffers, 0 for all buffers, Status Tight
+
+Actual = assigned address: 0
+
+Actual = assigned address: 512
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 4096
+
+Actual = assigned address: 4608
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Request additional buffer, expected values: 
+ Assigned address: -1
+
+Actual = assigned address: -1
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Return 10 510 buffers 
+ Expected values:
+ 10 510 buffers, Status OK
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Request 19 254 size buffersExpected values: 
+ 0 510 buffers, 1 254 size buffers, 0 126 size buffers, 
+ 0 62 size buffers, 0 30 size buffers, 0 14 size buffers,  0 6 size buffers Status Tight 
+
+Actual = assigned address: 0
+
+Actual = assigned address: 256
+
+Actual = assigned address: 512
+
+Actual = assigned address: 768
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1280
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 1792
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2304
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 2816
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3328
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 3840
+
+Actual = assigned address: 4096
+
+Actual = assigned address: 4352
+
+Actual = assigned address: 4608
+
+Free Buffer Count:
+0 512 Size Buffers
+1 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Request 1 510 Buffer after there is only 1 254 left, expected values: 
+ Assigned address: -1
+
+Actual = assigned address: -1
+
+Return 19 254 buffers 
+ Expected values:
+ 10 510 buffers, Status OK
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+testing multiple requests: 5 size 6, 2 size 254, 2 size 126, 7 510 size 
+ Expected values: 
+ 1 510 size buffers,  0 254 size buffer, 1 126 size buffer,
+ 1 62 size buffer, 0 30 size buffer, 1 14 size buffer 	and 1 6 size buffer, Status tight 
+
+Actual = Assigned Addresses for size 6:
+
+Actual = assigned address: 0
+
+Actual = assigned address: 8
+
+Actual = assigned address: 16
+
+Actual = assigned address: 24
+
+Actual = assigned address: 32
+
+Actual = Assigned Addresses for size 126:
+
+Actual = assigned address: 128
+
+Actual = assigned address: 256
+
+Actual = Assigned Addresses for size 254:
+
+Actual = assigned address: 512
+
+Actual = assigned address: 768
+
+Actual = Assigned Addresses for size 510:
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 4096
+
+Return 6 size buffers first, call debug and status between each return
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:0, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+1 16 Size Buffers
+2 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:8, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+2 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:16, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+2 16 Size Buffers
+2 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:24, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+1 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:32, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:512, a size 254 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+1 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:768, a size 254 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+2 512 Size Buffers
+0 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:128, a size 126 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+2 512 Size Buffers
+1 256 Size Buffers
+1 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:256, a size 126 buffer 
+ DebugOutput: 
+
+there should now only be 7 512 size buffers remaining with no other allocationsFree Buffer Count:
+3 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:1024, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+4 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:1536, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+5 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:2048, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+6 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:2560, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+7 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:3072, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+8 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:3584, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+9 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:4096, a size 512 buffer 
+ DebugOutput: 
+
+All buffers should now be free
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+filling all memory with min size allocations
+Should be no free buffers anymore
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+filling all memory with min size allocations
+Now free each of the odd allocations
+
+There should now be 320 free 8 size buffers
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+320 8 Size Buffers
+
+Status is:
+Tight
+
+filling all memory with min size allocations
+Now free each of the even allocations
+
+There should now be 10 free 512 size buffers
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+filling all memory with min size allocations
+Ethan Honzik, 5.20.2024, Assignment 8
+
+Initializing buffers 
+ Expected values: 10 512 size buffers, Status Ok
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Requesting 700, expected values: 
+ Assigned address: -2
+
+Actual = assigned address: -2
+
+Requesting 6,  Expected values: 
+ 9 510 size buffers, 1 254 size buffer, 1 126 size buffer, 
+ 1 62 size buffer, 1 30 size buffer, 1 14 size buffer and 1 6 size buffer, Status OK
+
+Actual = assigned address: 0
+
+Free Buffer Count:
+9 512 Size Buffers
+1 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+1 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+OK
+
+returning 6,  Expected values: 
+ 10 510 size buffers, Status OK 
+
+Actual = assigned address: 0
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Requesting 10 510 buffers,  Expected values: 
+ 0 510 buffers, 0 for all buffers, Status Tight
+
+Actual = assigned address: 0
+
+Actual = assigned address: 512
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 4096
+
+Actual = assigned address: 4608
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Request additional buffer, expected values: 
+ Assigned address: -1
+
+Actual = assigned address: -1
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Return 10 510 buffers 
+ Expected values:
+ 10 510 buffers, Status OK
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Request 19 254 size buffersExpected values: 
+ 0 510 buffers, 1 254 size buffers, 0 126 size buffers, 
+ 0 62 size buffers, 0 30 size buffers, 0 14 size buffers,  0 6 size buffers Status Tight 
+
+Actual = assigned address: 0
+
+Actual = assigned address: 256
+
+Actual = assigned address: 512
+
+Actual = assigned address: 768
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1280
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 1792
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2304
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 2816
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3328
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 3840
+
+Actual = assigned address: 4096
+
+Actual = assigned address: 4352
+
+Actual = assigned address: 4608
+
+Free Buffer Count:
+0 512 Size Buffers
+1 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Request 1 510 Buffer after there is only 1 254 left, expected values: 
+ Assigned address: -1
+
+Actual = assigned address: -1
+
+Return 19 254 buffers 
+ Expected values:
+ 10 510 buffers, Status OK
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+testing multiple requests: 5 size 6, 2 size 254, 2 size 126, 7 510 size 
+ Expected values: 
+ 1 510 size buffers,  0 254 size buffer, 1 126 size buffer,
+ 1 62 size buffer, 0 30 size buffer, 1 14 size buffer 	and 1 6 size buffer, Status tight 
+
+Actual = Assigned Addresses for size 6:
+
+Actual = assigned address: 0
+
+Actual = assigned address: 8
+
+Actual = assigned address: 16
+
+Actual = assigned address: 24
+
+Actual = assigned address: 32
+
+Actual = Assigned Addresses for size 126:
+
+Actual = assigned address: 128
+
+Actual = assigned address: 256
+
+Actual = Assigned Addresses for size 254:
+
+Actual = assigned address: 512
+
+Actual = assigned address: 768
+
+Actual = Assigned Addresses for size 510:
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 4096
+
+Return 6 size buffers first, call debug and status between each return
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:0, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+1 16 Size Buffers
+2 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:8, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+2 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:16, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+2 16 Size Buffers
+2 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:24, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+1 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:32, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:512, a size 254 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+1 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:768, a size 254 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+2 512 Size Buffers
+0 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:128, a size 126 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+2 512 Size Buffers
+1 256 Size Buffers
+1 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:256, a size 126 buffer 
+ DebugOutput: 
+
+there should now only be 7 512 size buffers remaining with no other allocationsFree Buffer Count:
+3 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:1024, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+4 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:1536, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+5 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:2048, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+6 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:2560, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+7 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:3072, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+8 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:3584, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+9 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:4096, a size 512 buffer 
+ DebugOutput: 
+
+All buffers should now be free
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+filling all memory with min size allocations
+Should be no free buffers anymore
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+filling all memory with min size allocations
+Now free each of the odd allocations
+
+There should now be 320 free 8 size buffers
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+320 8 Size Buffers
+
+Status is:
+Tight
+
+filling all memory with min size allocations
+Now free each of the even allocations
+
+There should now be 10 free 512 size buffers
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+filling all memory with min size allocations
+Ethan Honzik, 5.20.2024, Assignment 8
+
+Initializing buffers 
+ Expected values: 10 512 size buffers, Status Ok
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Requesting 700, expected values: 
+ Assigned address: -2
+
+Actual = assigned address: -2
+
+Requesting 6,  Expected values: 
+ 9 510 size buffers, 1 254 size buffer, 1 126 size buffer, 
+ 1 62 size buffer, 1 30 size buffer, 1 14 size buffer and 1 6 size buffer, Status OK
+
+Actual = assigned address: 0
+
+Free Buffer Count:
+9 512 Size Buffers
+1 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+1 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+OK
+
+returning 6,  Expected values: 
+ 10 510 size buffers, Status OK 
+
+Actual = assigned address: 0
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Requesting 10 510 buffers,  Expected values: 
+ 0 510 buffers, 0 for all buffers, Status Tight
+
+Actual = assigned address: 0
+
+Actual = assigned address: 512
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 4096
+
+Actual = assigned address: 4608
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Request additional buffer, expected values: 
+ Assigned address: -1
+
+Actual = assigned address: -1
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Return 10 510 buffers 
+ Expected values:
+ 10 510 buffers, Status OK
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Request 19 254 size buffersExpected values: 
+ 0 510 buffers, 1 254 size buffers, 0 126 size buffers, 
+ 0 62 size buffers, 0 30 size buffers, 0 14 size buffers,  0 6 size buffers Status Tight 
+
+Actual = assigned address: 0
+
+Actual = assigned address: 256
+
+Actual = assigned address: 512
+
+Actual = assigned address: 768
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1280
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 1792
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2304
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 2816
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3328
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 3840
+
+Actual = assigned address: 4096
+
+Actual = assigned address: 4352
+
+Actual = assigned address: 4608
+
+Free Buffer Count:
+0 512 Size Buffers
+1 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Request 1 510 Buffer after there is only 1 254 left, expected values: 
+ Assigned address: -1
+
+Actual = assigned address: -1
+
+Return 19 254 buffers 
+ Expected values:
+ 10 510 buffers, Status OK
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+testing multiple requests: 5 size 6, 2 size 254, 2 size 126, 7 510 size 
+ Expected values: 
+ 1 510 size buffers,  0 254 size buffer, 1 126 size buffer,
+ 1 62 size buffer, 0 30 size buffer, 1 14 size buffer 	and 1 6 size buffer, Status tight 
+
+Actual = Assigned Addresses for size 6:
+
+Actual = assigned address: 0
+
+Actual = assigned address: 8
+
+Actual = assigned address: 16
+
+Actual = assigned address: 24
+
+Actual = assigned address: 32
+
+Actual = Assigned Addresses for size 126:
+
+Actual = assigned address: 128
+
+Actual = assigned address: 256
+
+Actual = Assigned Addresses for size 254:
+
+Actual = assigned address: 512
+
+Actual = assigned address: 768
+
+Actual = Assigned Addresses for size 510:
+
+Actual = assigned address: 1024
+
+Actual = assigned address: 1536
+
+Actual = assigned address: 2048
+
+Actual = assigned address: 2560
+
+Actual = assigned address: 3072
+
+Actual = assigned address: 3584
+
+Actual = assigned address: 4096
+
+Return 6 size buffers first, call debug and status between each return
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:0, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+1 16 Size Buffers
+2 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:8, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+2 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:16, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+0 32 Size Buffers
+2 16 Size Buffers
+2 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:24, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+1 128 Size Buffers
+1 64 Size Buffers
+1 32 Size Buffers
+1 16 Size Buffers
+1 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:32, a size 6 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+0 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:512, a size 254 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+1 512 Size Buffers
+1 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:768, a size 254 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+2 512 Size Buffers
+0 256 Size Buffers
+2 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:128, a size 126 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+2 512 Size Buffers
+1 256 Size Buffers
+1 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+Returning mem address:256, a size 126 buffer 
+ DebugOutput: 
+
+there should now only be 7 512 size buffers remaining with no other allocationsFree Buffer Count:
+3 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:1024, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+4 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:1536, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+5 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:2048, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+6 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:2560, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+7 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:3072, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+8 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:3584, a size 512 buffer 
+ DebugOutput: 
+
+Free Buffer Count:
+9 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+Returning mem address:4096, a size 512 buffer 
+ DebugOutput: 
+
+All buffers should now be free
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+filling all memory with min size allocations
+Should be no free buffers anymore
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+Tight
+
+filling all memory with min size allocations
+Now free each of the odd allocations
+
+There should now be 320 free 8 size buffers
+
+Free Buffer Count:
+0 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+320 8 Size Buffers
+
+Status is:
+Tight
+
+filling all memory with min size allocations
+Now free each of the even allocations
+
+There should now be 10 free 512 size buffers
+
+Free Buffer Count:
+10 512 Size Buffers
+0 256 Size Buffers
+0 128 Size Buffers
+0 64 Size Buffers
+0 32 Size Buffers
+0 16 Size Buffers
+0 8 Size Buffers
+
+Status is:
+OK
+
+filling all memory with min size allocations

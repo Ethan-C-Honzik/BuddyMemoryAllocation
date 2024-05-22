@@ -62,6 +62,11 @@ public class Node {
         right = new Node(address + size / 2, size / 2);
     }
 
+    /**
+     * Used to free memory that is allocated at a specific address
+     * @param address the address to return
+     * @return returns false for debug reasons if memory can't be deallocated.
+     */
     public boolean deallocate(int address) {
         //only leaf nodes can be allocated
         if (left == null && right == null) {
@@ -105,6 +110,12 @@ public class Node {
         }
     }
 
+    /**
+     * This traverses the binary finding the leaf nodes that are allocated and filling that data into
+     * the provided maps
+     * @param allocatedMap a map that has buffer size as the key and amount of buffers as the value
+     * @param unallocatedMap a map that has buffer size as the key and amount of buffers as the value
+     */
     public void traverseForData(Map<Integer, Integer> allocatedMap, Map<Integer, Integer> unallocatedMap) {
         //if this is allocated log it in the map
         if (allocated) {
@@ -120,6 +131,12 @@ public class Node {
         }
     }
 
+    /**
+     * Helper method used to tell if a node of the tree is allocated or has allocated children.
+     * This is used for buffer combining
+     * @param n the node to check
+     * @return if the node any child nodes are allocated
+     */
     private static boolean containsAllocatedChild(Node n) {
         if (n.allocated) return true;
         else if (n.left == null && n.right == null) return false;

@@ -1,12 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Assignment8
  * Operating Systems
  * Code written by Ethan Honzik
  * 5/20/2024
  * Simulation of the buddy memory allocation algorithm
+ */
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * The driver class for the memory allocator that tests functionality.
  */
 public class Main {
     MemoryAllocator allocator = new MemoryAllocator(512, 10);
@@ -154,18 +161,50 @@ public class Main {
         }
 
         output += "there should now only be 7 512 size buffers remaining with no other allocations";
+
+        for (int i = 9; i < 16; i++) {
+            output += (allocator.getAllocationData().toString() + "\n");
+            output += ("Status is:\n" + allocator.getStatus() + "\n\n");
+            output += "Returning mem address:" + addressList.get(i) + ", a size 512 buffer \n" +
+                    " DebugOutput: \n\n";
+            allocator.deallocate(addressList.get(i));
+        }
+
+        output += "All buffers should now be free\n\n";
+        output += (allocator.getAllocationData().toString() + "\n");
+        output += ("Status is:\n" + allocator.getStatus() + "\n\n");
     }
 
-
-    void test1() {
-        /*
-        while(!addressList.isEmpty()){
-            int randomAdrIdx = (int) (Math.random() * addressList.size());
-            int adr = addressList.get(randomAdrIdx);
-            addressList.remove(adr);
-            allocator.deallocate(adr);
+    void worstCaseFragTest() {
+        int[] addresses = new int[512 * 10 / 8];
+        output += "filling all memory with min size allocations\n";
+        for (int i = 0; i < addresses.length; i++) {
+            addresses[i] = allocator.allocate(6);
         }
-        */
+        output += "Should be no free buffers anymore\n\n";
+        output += (allocator.getAllocationData().toString() + "\n");
+        output += ("Status is:\n" + allocator.getStatus() + "\n\n");
+        output += "filling all memory with min size allocations\n";
+
+        output += "Now free each of the odd allocations\n\n";
+        for (int i = 1; i < addresses.length; i+=2) {
+            allocator.deallocate(addresses[i]);
+        }
+
+        output += "There should now be 320 free 8 size buffers\n\n";
+        output += (allocator.getAllocationData().toString() + "\n");
+        output += ("Status is:\n" + allocator.getStatus() + "\n\n");
+        output += "filling all memory with min size allocations\n";
+
+        output += "Now free each of the even allocations\n\n";
+        for (int i = 0; i < addresses.length; i+=2) {
+            allocator.deallocate(addresses[i]);
+        }
+
+        output += "There should now be 10 free 512 size buffers\n\n";
+        output += (allocator.getAllocationData().toString() + "\n");
+        output += ("Status is:\n" + allocator.getStatus() + "\n\n");
+        output += "filling all memory with min size allocations\n";
     }
 
     public void run() {
@@ -178,7 +217,14 @@ public class Main {
         test_filling_memory();
         test_19_254_buffs();
         mixed_size_test();
-        System.out.println(output);
+        worstCaseFragTest();
+        //System.out.println(output);
+        try {
+            Files.write(Paths.get("output.txt"), output.getBytes(),
+                    StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+        }catch (IOException e) {
+            System.out.println(e.toString());
+        }
     }
 
     public static void main(String[] args) {
